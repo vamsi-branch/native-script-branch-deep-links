@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@native-script-branch/*": ["../../packages/*"]
+      "@nativescript/*": ["../../packages/*"]
     }
   }
 }

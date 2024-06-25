@@ -5,8 +5,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
-      "@demo/shared": ["../../tools/demo/index.ts"],
-      "@native-script-branch/*": ["../../packages/*"]
+      "@demo/shared": ["../../tools/demo/index.ts"]
     }
   }
 }
