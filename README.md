@@ -5,7 +5,7 @@ npm run setup
 npm start
 ```
 
-- @
+- [native-script-branch](packages/native-script-branch/README.md)
 
 # How to use?
 

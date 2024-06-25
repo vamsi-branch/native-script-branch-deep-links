@@ -61,6 +61,13 @@ module.exports = {
     // packages
     // build output is always in dist/packages
     '@': {
+      // native-script-branch
+      'native-script-branch': {
+        build: {
+          script: 'nx run native-script-branch:build.all',
+          description: 'native-script-branch: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -71,6 +78,10 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
+      'native-script-branch': {
+        script: 'nx run native-script-branch:focus',
+        description: 'Focus on native-script-branch',
+      },
       reset: {
         script: 'nx g @/plugin-tools:focus-packages',
         description: 'Reset Focus',
