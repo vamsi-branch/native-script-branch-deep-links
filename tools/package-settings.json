@@ -1,0 +1,17 @@
+{
+  "name": "@native-script-branch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vamsi-branch/native-script-branch-deep-links.git"
+  },
+  "keywords": ["NativeScript", "JavaScript", "TypeScript", "iOS", "Android"],
+  "author": {
+    "name": "Vamsi Madhav H",
+    "email": "me.vmhsi@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/vamsi-branch/native-script-branch-deep-links/issues"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/vamsi-branch/native-script-branch-deep-links"
+}
