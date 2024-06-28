@@ -1,3 +1,3 @@
-import { NativeScriptBranchCommon } from './common';
+import { NSBranchCommon } from './common';
 
-export class NativeScriptBranch extends NativeScriptBranchCommon {}
+export class NativeScriptBranch extends NSBranchCommon {}

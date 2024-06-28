@@ -1,3 +1,3 @@
 import { Observable } from '@nativescript/core';
 
-export class NativeScriptBranchCommon extends Observable {}
+export class NSBranchCommon extends Observable {}
