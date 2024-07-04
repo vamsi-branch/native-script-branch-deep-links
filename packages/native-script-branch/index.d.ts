@@ -1,15 +1,12 @@
-import { NativeScriptBranchCommon } from './common';
-import { NSBranchModule } from './index.android';
+import { NSBranchCommon } from './common';
+import { NSBranch } from './index.android';
 
-export declare namespace nsbranch {
-  interface BranchSessionConfig {
-    ignoreIntent?: boolean;
-    delay?: number;
-  }
-
-  class NSBranchModule {
-    static sessionBuilder(activity: any, config?: BranchSessionConfig): Promise<void>;
-  }
+export class NSBranch extends NSBranchCommon {
+  getBranchInstance(context: globalAndroid.content.Context): Promise<io.branch.referral.Branch | null>;
+  enableLogging(): void;
+  // setIdentity(userId: string): void;
+  // getLatestReferringParams(): any;
+  // shareLink(activity: any, branchUniversalObject: any, linkProperties: any, message: string, shareText: string): void;
+  // registerView(branchUniversalObject: any): void;
+  // logout(): void;
 }
-
-export { NSBranchModule };
