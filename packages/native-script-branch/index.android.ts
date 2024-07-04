@@ -5,7 +5,7 @@ const Branch = io.branch.referral.Branch;
 export class NSBranch extends NSBranchCommon {
   private static readonly EVENT_INIT: string = 'init';
   private static readonly EVENT_INIT_ERROR: string = 'initError';
-
+  
   public getBranchInstance(context: globalAndroid.content.Context): Promise<io.branch.referral.Branch | null> {
     return new Promise((resolve, reject) => {
       try {
