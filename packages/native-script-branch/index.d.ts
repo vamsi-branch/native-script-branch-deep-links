@@ -4,6 +4,8 @@ import { NSBranch } from './index.android';
 export class NSBranch extends NSBranchCommon {
   getBranchInstance(context: globalAndroid.content.Context): Promise<io.branch.referral.Branch | null>;
   enableLogging(): void;
+  handleOnNewIntent(intent: any): void;
+  handleOnStart(context: globalAndroid.content.Context);
   // setIdentity(userId: string): void;
   // getLatestReferringParams(): any;
   // shareLink(activity: any, branchUniversalObject: any, linkProperties: any, message: string, shareText: string): void;
