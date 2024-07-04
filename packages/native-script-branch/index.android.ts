@@ -1,22 +1,26 @@
 import { NSBranchCommon } from './common';
 
-declare var io: any;
 const Branch = io.branch.referral.Branch;
 
 export class NSBranch extends NSBranchCommon {
   private static readonly EVENT_INIT: string = 'init';
   private static readonly EVENT_INIT_ERROR: string = 'initError';
 
-  public getBranchInstance(context: globalAndroid.content.Context): io.branch.referral.Branch | null {
-    Branch.registerPlugin('NativeScript', '1.0.0');
+  public getBranchInstance(context: globalAndroid.content.Context): Promise<io.branch.referral.Branch | null> {
+    return new Promise((resolve, reject) => {
+      try {
+        Branch.registerPlugin('NativeScript', '1.0.0');
+        const isUnlocked = this.isUserUnlocked(context);
 
-    const isUnlocked = this.isUserUnlocked(context);
-
-    if (isUnlocked) {
-      return Branch.getAutoInstance(context);
-    }
-
-    return null;
+        if (isUnlocked) {
+          resolve(Branch.getAutoInstance(context));
+        } else {
+          resolve(null);
+        }
+      } catch (error) {
+        reject(error);
+      }
+    });
   }
 
   private isUserUnlocked(context: android.content.Context): boolean {
