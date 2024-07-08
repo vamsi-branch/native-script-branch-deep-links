@@ -1,3 +1,19 @@
+declare namespace java {
+  declare namespace io {
+    export namespace branch {
+      export namespace nsbranch {
+        export class NSBranchModule {
+          static getAutoInstance(context: globalAndroid.content.Context): void;
+          static reInitSession(activity: globalAndroid.app.Activity): void;
+          //initSession(uri: android.net.Uri, activity: globalAndroid.app.Activity, anInitListener: io.branch.referral.Branch.BranchUniversalReferralInitListener): void;
+          static initSession(uri: android.net.Uri, activity: globalAndroid.app.Activity): void;
+          static enableLogging(): void;
+        }
+      }
+    }
+  }
+}
+
 declare module io {
   export module branch {
     export module data {

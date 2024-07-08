@@ -2,13 +2,9 @@ import { NSBranchCommon } from './common';
 import { NSBranch } from './index.android';
 
 export class NSBranch extends NSBranchCommon {
-  getBranchInstance(context: globalAndroid.content.Context): Promise<io.branch.referral.Branch | null>;
-  enableLogging(): void;
-  handleOnNewIntent(intent: any): void;
-  handleOnStart(context: globalAndroid.content.Context);
-  // setIdentity(userId: string): void;
-  // getLatestReferringParams(): any;
-  // shareLink(activity: any, branchUniversalObject: any, linkProperties: any, message: string, shareText: string): void;
-  // registerView(branchUniversalObject: any): void;
-  // logout(): void;
+  static getAutoInstance(context: globalAndroid.content.Context): void;
+  static reInitSession(activity: globalAndroid.app.Activity): void;
+  // initSession(uri: android.net.Uri, activity: globalAndroid.app.Activity, anInitListener: io.branch.referral.Branch.BranchUniversalReferralInitListener): void;
+  static initSession(uri: android.net.Uri, activity: globalAndroid.app.Activity): void;
+  static enableLogging(): void;
 }
