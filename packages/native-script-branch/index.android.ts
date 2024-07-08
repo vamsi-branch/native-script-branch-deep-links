@@ -5,6 +5,12 @@ declare const java: any;
 const nsbranch = java.io.branch.nsbranch;
 
 export class NSBranch extends NSBranchCommon {
+  constructor(context: globalAndroid.content.Context) {
+    super();
+    console.log('calling constructor 1');
+    new nsbranch.NSBranchModule(context);
+  }
+
   public static getAutoInstance(context: globalAndroid.content.Context): void {
     nsbranch.NSBranchModule.getAutoInstance(context);
   }
@@ -23,5 +29,28 @@ export class NSBranch extends NSBranchCommon {
 
   public static enableLogging() {
     nsbranch.NSBranchModule.enableLogging();
+  }
+
+  public static setRequestMetadata(key: string, val: string): void {
+    nsbranch.NSBranchModule.setRequestMetadata(key, val);
+  }
+
+  public disableTracking(disable: boolean): void {
+    nsbranch.NSBranchModule.disableTracking(disable);
+  }
+
+  public isTrackingDisabled(): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      try {
+        const result = nsbranch.NSBranchModule.isTrackingDisabled();
+        resolve(result);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  public setIdentity(identity: string): void {
+    nsbranch.NSBranchModule.setIdentity(identity);
   }
 }

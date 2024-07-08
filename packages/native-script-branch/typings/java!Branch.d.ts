@@ -3,11 +3,22 @@ declare namespace java {
     export namespace branch {
       export namespace nsbranch {
         export class NSBranchModule {
+          constructor(context: globalAndroid.content.Context);
           static getAutoInstance(context: globalAndroid.content.Context): void;
           static reInitSession(activity: globalAndroid.app.Activity): void;
           //initSession(uri: android.net.Uri, activity: globalAndroid.app.Activity, anInitListener: io.branch.referral.Branch.BranchUniversalReferralInitListener): void;
           static initSession(uri: android.net.Uri, activity: globalAndroid.app.Activity): void;
+          static onNewIntent(intent: globalAndroid.content.Intent): void;
           static enableLogging(): void;
+          static setRequestMetadata(key: string, val: string): void;
+          disableTracking(disable: boolean): void;
+          isTrackingDisabled(): boolean;
+          // getLatestReferringParams: (synchronous?: boolean) => Promise<BranchParams>;
+          // getFirstReferringParams: () => Promise<BranchParams>;
+          // lastAttributedTouchData: (
+          //   attributionWindow?: number
+          // ) => Promise<BranchParams>;
+          setIdentity(identity: string): void;
         }
       }
     }
